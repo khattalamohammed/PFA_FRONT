@@ -1,0 +1,43 @@
+<img src="../../assets/images/edit2.png" class="fixed hidden lg:block inset-0 h-full" style="z-index: -1;"/>
+<div class="center">
+    <div class="fixed hidden lg:block inset-0 " style="z-index: -1; width: 200px; margin-top: 60px; margin-left: 20px;">
+        <img src="../../assets/images/avatar.png"/>
+        <button style="  background-color: white; color: black; border: 2px solid #01b388; width: 100px; border-radius: 5px; margin-left: 50px;">Edit</button>
+    </div>
+    <form method="post">
+        <h1 style="position: relative; left: 60%; margin-top: 15px; color: #01b388;  font-family: Poppins, sans-serif;">Account Information</h1>
+      <div class="txt_field" style="margin-top: 30px;">
+        <input type="text" required>
+        <span></span>
+        <label>Full Name</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" required>
+        <span></span>
+        <label>Email</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" required>
+        <span></span>
+        <label>Phone</label>
+      </div>
+      <h1 style="position: relative; left: 65%; margin-top: 20px; color: #01b388;  font-family: Poppins, sans-serif;">Password</h1>
+      <div class="txt_field">
+        <input type="text" required>
+        <span></span>
+        <label>Current password</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" required>
+        <span></span>
+        <label>New password</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" required>
+        <span></span>
+        <label>Confirm password</label>
+      </div>
+      <input [routerLink]="['/edit']" type="submit" value="Update">
+    
+    </form>
+</div>
