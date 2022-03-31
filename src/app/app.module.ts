@@ -7,6 +7,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { TableComponent } from './table/table.component';
 import { OperationComponent } from './operation/operation.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { OperationComponent } from './operation/operation.component';
     CategoriesComponent,
     TableComponent,
     OperationComponent,
+    HeaderComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
