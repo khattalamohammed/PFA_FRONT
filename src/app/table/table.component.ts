@@ -7,15 +7,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   @Output()
-  changeState: EventEmitter<boolean>=new EventEmitter();
-  show: boolean = false;
+  changeState: EventEmitter<boolean> = new EventEmitter();
+  @Output()
+  changeState2: EventEmitter<boolean> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
   edit(): void {
-    this.show = true;
+    this.changeState.emit();
   }
-  cancel():void{
-    this.show = false;
+  add() {
+    this.changeState2.emit();
   }
 }

@@ -1,22 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-operation',
   templateUrl: './operation.component.html',
-  styleUrls: ['./operation.component.css']
+  styleUrls: ['./operation.component.css'],
 })
 export class OperationComponent implements OnInit {
   @Input()
-  type:string='';
+  type: string = '';
   @Input()
-  operation:string='';
-  @Input()
-  show:any;
-  constructor() { }
+  operation: string = '';
+  @Output()
+  cancel: EventEmitter<boolean> = new EventEmitter();
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-  cancel(){
-    this.show=false;
+  ngOnInit(): void {}
+  hide() {
+    this.cancel.emit();
   }
 }
