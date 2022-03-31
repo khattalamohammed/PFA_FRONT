@@ -1,4 +1,5 @@
-<div class="fixed flex justify-center w-full z-10 bg-white pb-2">
+<app-header></app-header>
+<div class="fixed flex justify-center w-full bg-white pt-8 top-20 z-10">
   <input
     type="text"
     class="h-14 w-1/2 pr-8 pl-5 rounded border-orange-600 border focus:shadow focus:outline-none"
@@ -13,12 +14,12 @@
     </svg>
   </div>
 </div>
-<div class="flex justify-center w-full z-0">
-  <table class="mt-20 w-1/2 text-center">
+<div class="flex justify-center w-full mt-48">
+  <table class="w-140 text-center">
     <thead class="text-3xl p-10 z-10 bg-orange-600">
-      <th class="text-black w-40 py-3">id</th>
-      <th class="text-black w-40 py-3">name</th>
-      <th class="text-black w-60 py-3">actions</th>
+      <th class="text-white w-40 py-3">id</th>
+      <th class="text-white w-40 py-3">name</th>
+      <th class="text-white w-60 py-3">actions</th>
     </thead>
     <div class="h-3"></div>
     <tr>
@@ -348,7 +349,7 @@
 </div>
 <div
   (click)="add()"
-  class="bg-orange-600 text-white fixed bottom-5 right-3 rounded-full w-14 h-14 flex items-center justify-center cursor-pointer"
+  class="bg-orange-600 text-white fixed bottom-5 right-5 rounded-full w-14 h-14 flex items-center justify-center cursor-pointer"
 >
   <div class="w-1/2 h-1/2">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

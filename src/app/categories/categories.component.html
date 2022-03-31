@@ -1,1 +1,14 @@
-<p>categories works!</p>
+<app-table (changeState)="show()" (changeState2)="new()"></app-table>
+
+<app-operation
+  operation="Modifier"
+  type="Categorie"
+  *ngIf="isVisible"
+  (cancel)="hide()"
+></app-operation>
+<app-operation
+  operation="Ajouter"
+  type="Categorie"
+  *ngIf="add"
+  (cancel)="hide()"
+></app-operation>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
