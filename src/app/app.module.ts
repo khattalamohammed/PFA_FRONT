@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OrdersComponent } from './orders/orders.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { TableComponent } from './table/table.component';
+import { OperationComponent } from './operation/operation.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { AddPlantComponent } from './add-plant/add-plant.component';
@@ -16,6 +20,10 @@ import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
+    OrdersComponent,
+    CategoriesComponent,
+    TableComponent,
+    OperationComponent,
     HeaderComponent,
     LoginComponent,
     AddPlantComponent
@@ -31,6 +39,6 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
