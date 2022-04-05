@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<div class="md:container  ml-14 mr-20 md:w-760 my-20 px-10 pb-8 bg-white rounded-2xl  shadow-2xl">
+    <div class="relative">
+        <div class="flex flex-wrap">
+                  <!-- cards -->
+            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-8">
+                <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>Conifère</mat-card-title>
+                    </mat-card-header>
+                    <div class="ml-8 pt-6 rounded ">
+                        <img class="w-full object-cover h-36 sm:h-90 sm:w-96" mat-card-image src="../../assets/images/familles/conifere.jpg" alt="Conifère"/>
+        
+                    </div>
+        
+                    <mat-card-actions class="flex items-center" align="end">
+                      <button mat-raised-button color="primary" class="flex-1">Modifier</button>
+                      <button mat-raised-button color="primary" class="flex-1">Supprimer</button>
+                    </mat-card-actions>
+                  </mat-card>   
+    
+            </div>
+
+            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-8">
+                <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>Palmier</mat-card-title>
+                    </mat-card-header>
+                    <div class="ml-8 pt-6 rounded ">
+                        <img class="w-full object-cover h-36 sm:h-90 sm:w-96" mat-card-image src="../../assets/images/familles/plamier.jpg" alt="Conifère"/>
+                    </div>
+        
+                    <mat-card-actions class="flex items-center" align="end">
+                      <button mat-raised-button color="primary" class="flex-1">Modifier</button>
+                      <button mat-raised-button color="primary" class="flex-1">Supprimer</button>
+                    </mat-card-actions>
+                  </mat-card>     
+            </div>
+
+            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-8">
+                <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>Fruit</mat-card-title>
+                    </mat-card-header>
+                    <div class="ml-8 pt-6 rounded ">
+                        <img class="w-full object-cover h-36 sm:h-90 sm:w-96" mat-card-image src="../../assets/images/familles/clementine.jpg" alt="Conifère"/>
+        
+                    </div>
+        
+                    <mat-card-actions class="flex items-center" align="end">
+                      <button mat-raised-button color="primary" class="flex-1">Modifier</button>
+                      <button mat-raised-button color="primary" class="flex-1">Supprimer</button>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+            
+            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-4">
+                <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>Conifère</mat-card-title>
+                    </mat-card-header>
+                    <div class="ml-8 pt-6 rounded ">
+                        <img class="w-full object-cover h-36 sm:h-90 sm:w-96" mat-card-image src="../../assets/images/familles/conifere.jpg" alt="Conifère"/>
+        
+                    </div>
+        
+                    <mat-card-actions class="flex items-center" align="end">
+                      <button mat-raised-button color="primary" class="flex-1">Modifier</button>
+                      <button mat-raised-button color="primary" class="flex-1">Supprimer</button>
+                    </mat-card-actions>
+                  </mat-card>   
+    
+            </div>
+
+
+            <div (click)="new()" class="bg-primaryColor text-white fixed bottom-5 right-5 rounded-full w-14 h-14 flex items-center justify-center cursor-pointer">
+                <div class="w-1/2 h-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="#FFFFFF" d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+          
+    </div>
+
+    <app-operation operation="Ajouter" type="Famille" *ngIf="add" (cancel)="hide()"></app-operation>
+
+</div>

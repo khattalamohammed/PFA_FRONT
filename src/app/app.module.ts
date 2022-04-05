@@ -16,6 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import { FamillesComponent } from './familles/familles.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {MatIconModule} from '@angular/material/icon';
     OperationComponent,
     HeaderComponent,
     LoginComponent,
-    AddPlantComponent
+    AddPlantComponent,
+    FamillesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatSelectModule, 
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
