@@ -1,0 +1,14 @@
+<app-table (changeState)="show()" (changeState2)="new()"></app-table>
+
+<app-operation
+  operation="Modifier"
+  type="Ordre"
+  *ngIf="isVisible"
+  (cancel)="hide()"
+></app-operation>
+<app-operation
+  operation="Ajouter"
+  type="Ordre"
+  *ngIf="add"
+  (cancel)="hide()"
+></app-operation>
