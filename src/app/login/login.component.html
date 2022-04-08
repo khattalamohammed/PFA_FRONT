@@ -1,1 +1,28 @@
-
+<img
+  src="../../assets/images/Web 1920 – 1.png"
+  class="fixed hidden lg:block inset-0 h-full"
+  style="z-index: -1"
+/>
+<div class="center">
+  <img
+    src="../../assets/images/log1-removebg-preview.png"
+    style="width: 250px; margin-left: 70px"
+  />
+  <form method="post">
+    <div class="txt_field">
+      <input type="text" required />
+      <span></span>
+      <label>Username</label>
+    </div>
+    <div class="txt_field">
+      <input type="password" required />
+      <span></span>
+      <label>Password</label>
+    </div>
+    <div class="pass">Forgot Password?</div>
+    <input type="submit" value="Login" [routerLink]="['/categories']" />
+    <div class="signup_link">
+      Not a member? <a [routerLink]="['/signup']">Signup</a>
+    </div>
+  </form>
+</div>
