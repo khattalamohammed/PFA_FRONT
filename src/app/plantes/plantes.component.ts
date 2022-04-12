@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plantes',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlantesComponent implements OnInit {
 
-  constructor() { }
+  isVisible: boolean = false;
+  add: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private route: Router) { }
+
+  ngOnInit(){
+
+  }
+
+  show() {
+    this.isVisible = true;
+  }
+  
+  hide() {
+    this.isVisible = false;
+    this.add = false;
+  }
+  new() {
+    this.add = true;
+  }
+
+  moveToPlant(){
+    this.route.navigate(['edit-plant']);
+  }
+
+  edit(){
+    this.route.navigate(['edit-plant']);
+  }
+
+  addPlant(){
+    this.route.navigate(['add']);
   }
 
 }

@@ -17,8 +17,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider'; 
+import { MatListModule } from '@angular/material/list'; 
 import { FamillesComponent } from './familles/familles.component';
 import { PlantesComponent } from './plantes/plantes.component';
+import { EditPlantComponent } from './edit-plant/edit-plant.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { PlantesComponent } from './plantes/plantes.component';
     LoginComponent,
     AddPlantComponent,
     FamillesComponent,
-    PlantesComponent
+    PlantesComponent,
+    EditPlantComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { PlantesComponent } from './plantes/plantes.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatDividerModule,
+    MatListModule,  
   ],
   providers: [],
   bootstrap: [AppComponent],

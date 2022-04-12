@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -10,6 +9,7 @@ export class TableComponent implements OnInit {
   changeState: EventEmitter<boolean> = new EventEmitter();
   @Output()
   changeState2: EventEmitter<boolean> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,4 +19,6 @@ export class TableComponent implements OnInit {
   add() {
     this.changeState2.emit();
   }
+
+  
 }

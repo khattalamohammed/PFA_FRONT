@@ -8,6 +8,9 @@ import { FamillesComponent } from './familles/familles.component';
 import { LoginComponent } from './login/login.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { RegisterComponent } from './register/register.component';
+import { PlantesComponent } from './plantes/plantes.component'; 
+import { EditPlantComponent } from './edit-plant/edit-plant.component';
+
 const routes: Routes = [
   { path: 'add', component: AddPlantComponent },
   { path: 'orders', component: OrdersComponent },
@@ -16,6 +19,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'edit', component: EditProfileComponent },
   { path: 'signup', component: RegisterComponent },
+  { path : 'plantes', component : PlantesComponent}, 
+  { path : 'edit-plant', component : EditPlantComponent}, 
   
 ];
 
