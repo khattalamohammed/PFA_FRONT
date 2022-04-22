@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-familles',
@@ -9,7 +10,7 @@ export class FamillesComponent implements OnInit {
 
   isVisible: boolean = false;
   add: boolean = false;
-  constructor() {}
+  constructor(private route :  Router) {}
 
   ngOnInit(): void {}
   hide() {
@@ -18,5 +19,9 @@ export class FamillesComponent implements OnInit {
   }
   new() {
     this.add = true;
+  }
+
+  moveToPlants(){
+    this.route.navigate(['plantes']); 
   }
 }
