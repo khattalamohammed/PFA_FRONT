@@ -1,11 +1,13 @@
 <app-header></app-header>
-<div class="fixed flex justify-center w-full bg-white pt-8 top-20 right-0 z-10">
+<div class="fixed flex justify-center w-full bg-white pt-8 top-20 right-0 z-10" [formGroup]="form">
   <input
+    
     type="text"
     class="h-14 w-1/2 pr-8 pl-5 rounded border-[#01B388] border focus:shadow focus:outline-none m-0"
     placeholder="Search anything..."
+    formControlName="searchName"
   />
-  <div class="relative right-10 top-4 w-6 h-6 hover:text-gray-500">
+  <div class="relative right-10 top-4 w-6 h-6 hover:text-gray-500" (click)="search(form)">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <path
         fill="#9ca3af"
@@ -14,253 +16,37 @@
     </svg>
   </div>
 </div>
-<div class="flex justify-center w-full mt-48">
-  <table class="w-140 text-center">
-    <thead class="text-3xl p-10 z-10 bg-[#01B388]">
-      <th class="text-white w-40 py-3">id</th>
+<div class="flex justify-center  mt-48">
+  <table class="w-140 text-center w-1/2">
+    <thead class="text-3xl p-10 z-10 bg-[#01B388] ">
+      <!-- <th class="text-white w-40 py-3">id</th> -->
       <th class="text-white w-40 py-3">name</th>
       <th class="text-white w-60 py-3">actions</th>
     </thead>
     <div class="h-3"></div>
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
+
+    <tr *ngFor="let item of liste">
+      <!-- <td class="z-0 py-1">1</td> -->
+      <td class="z-0 py-1">{{item.nomCategorie}} {{item.nomOrdre}} {{item.nomType}}</td>
       <td class="z-0 py-1">
         <div class="float-right">
           <button
-            (click)="edit()"
+            (click)="edit(item.nomCategorie, item.nomOrdre, item.nomType)"
             class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
           >
-            modifier
+            Modifier
           </button>
           <button
+            (click)="delete(item.nomCategorie, item.nomOrdre, item.nomType)"
             class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
           >
-            supprimer
+            Supprimer
           </button>
         </div>
       </td>
     </tr>
     
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="z-0 py-1">1</td>
-      <td class="z-0 py-1">olivier</td>
-      <td class="z-0 py-1">
-        <div class="float-right">
-          <button
-            (click)="edit()"
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full mr-5"
-          >
-            modifier
-          </button>
-          <button
-            class="bg-[#01B388] text-white font-normal py-2 px-3 rounded-full"
-          >
-            supprimer
-          </button>
-        </div>
-      </td>
-    </tr>
+    <tr *ngIf="!liste"> Liste vide !</tr>
     
   </table>
 </div>

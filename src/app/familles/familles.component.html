@@ -4,7 +4,7 @@
     <div class="relative">
         <div class="flex flex-wrap">
                   <!-- cards -->
-            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-8 ">
+            <!-- <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-8 ">
                 <mat-card>
                     <mat-card-header>
                       <mat-card-title>Conifère</mat-card-title>
@@ -53,21 +53,21 @@
                       <button mat-raised-button color="primary" class="flex-1">Supprimer</button>
                     </mat-card-actions>
                   </mat-card>
-            </div>
+            </div> -->
             
-            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-4">
+            <div class="md:mx-8 md:my-8 md:w-2/5 w-full my-4" *ngFor="let famille of listFamille">
                 <mat-card>
                     <mat-card-header>
-                      <mat-card-title>Conifère</mat-card-title>
+                      <mat-card-title>{{famille.nomFamille}}</mat-card-title>
                     </mat-card-header>
-                    <div class="ml-8 pt-6 rounded " (click)="moveToPlants()">
-                        <img class="w-full object-cover h-36 sm:h-90 sm:w-96" mat-card-image src="../../assets/images/familles/conifere.jpg" alt="Conifère"/>
+                    <div class="ml-8 pt-6 rounded " (click)="moveToPlants(famille.nomFamille)">
+                        <img class="w-full object-cover h-36 sm:h-90 sm:w-96" mat-card-image [src]="famille.retrievedImage" [alt]="famille.nomFamille" />
         
                     </div>
         
                     <mat-card-actions class="flex items-center" align="end">
-                      <button mat-raised-button color="primary" class="flex-1">Modifier</button>
-                      <button mat-raised-button color="primary" class="flex-1">Supprimer</button>
+                      <button mat-raised-button color="primary" class="flex-1" (click)="edit(famille.nomFamille)">Modifier</button>
+                      <button mat-raised-button color="primary" class="flex-1" (click)="delete(famille.nomFamille)" >Supprimer</button>
                     </mat-card-actions>
                   </mat-card>   
     
@@ -86,6 +86,68 @@
           
     </div>
 
-    <app-operation operation="Ajouter" type="Famille" *ngIf="add" (cancel)="hide()"></app-operation>
+    <!-- <app-operation operation="Ajouter" type="Famille" *ngIf="add" (cancel)="hide()"></app-operation> -->
+
+  <div *ngIf="add" class="min-h-screen w-full flex justify-center items-center bg-[#01B388] bg-opacity-25 fixed top-0 right-0 z-20">
+    <div class="bg-primaryColor  sm:w-1/2 w-auto  p-10 rounded-xl">
+
+      <div (click)="hide()" class="relative float-right w-9 h-9 left-14 bottom-16 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            fill="#ff0000"
+            d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM175 208.1L222.1 255.1L175 303C165.7 312.4 165.7 327.6 175 336.1C184.4 346.3 199.6 346.3 208.1 336.1L255.1 289.9L303 336.1C312.4 346.3 327.6 346.3 336.1 336.1C346.3 327.6 346.3 312.4 336.1 303L289.9 255.1L336.1 208.1C346.3 199.6 346.3 184.4 336.1 175C327.6 165.7 312.4 165.7 303 175L255.1 222.1L208.1 175C199.6 165.7 184.4 165.7 175 175C165.7 184.4 165.7 199.6 175 208.1V208.1z"
+          />
+        </svg>
+      </div>
+
+      <h1 class="text-center text-4xl mb-20 text-white text-bold">
+          {{operation }}
+      </h1>
+      <!-- <form class="w-full" [formGroup]="form"> -->
+      <form class="w-full" [formGroup]="form" id="familleOperation">
+
+        <div class="flex items-center justify-center flex-col">
+          <div >
+            <input
+              class=" rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white  md:w-96 w-64"
+              id="nom"
+              type="text"
+              placeholder="Nom"
+              formControlName="nomFamille"
+              for="familleOperation"
+            />
+          </div>
+          
+          <div class="mt-4">
+            <input type="file" id="familleFile" accept="image/*"  style="display: none;" (change)="uploadImageFamille($event)" for="familleOperation" formControlName="familleFile" />
+            <label [matBadge]="number"  matBadgeColor="warn" for="familleFile" class="block bg-white rounded text-primaryColor text-center text-sm sm:w-64 md:w-96 w-64  pt-1 pb-2 font-bold">
+                Importer l'image
+                <mat-icon><svg class="pl-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                      <path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>
+                </mat-icon>
+            </label>
+          </div> 
+
+          <mat-error class="block text-center text-white mt-2" *ngIf="this.form.controls['nomFamille'].hasError('required') || this.form.controls['familleFile'].hasError('required') "> Ces champs sont obligatoire pour la  {{ operation | lowercase }} !</mat-error>
+
+        </div>
+
+        <div class="mt-20 float-right ">
+          <button class="bg-white text-[#01B388] font-bold py-2 px-4 rounded-full mr-5"  
+          (click)="submit(form)" >
+            Ajouter</button
+          ><button
+            (click)="hide()"
+            class="bg-white text-[#01B388] font-bold py-2 px-4 rounded-full"
+          >
+            annuler
+          </button>
+        </div>
+
+      </form>
+    </div>
+</div>
+
 
 </div>

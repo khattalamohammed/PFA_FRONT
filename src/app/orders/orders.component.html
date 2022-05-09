@@ -1,8 +1,9 @@
-<app-table (changeState)="show()" (changeState2)="new()"></app-table>
+<app-table (changeState)="show()" (changeState2)="new()" (nomX)="nomOrdreEvent($event)" type="ordre"></app-table>
 
 <app-operation
   operation="Modifier"
   type="Ordre"
+  [nomX]="nomOrdre"
   *ngIf="isVisible"
   (cancel)="hide()"
 ></app-operation>

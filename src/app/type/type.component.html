@@ -1,0 +1,15 @@
+<app-table (changeState)="show()" (changeState2)="new()" (nomX)="nomTypeEvent($event)" type="type"></app-table>
+
+<app-operation
+  operation="Modifier"
+  type="Type"
+  [nomX]="typeName"
+  *ngIf="isVisible"
+  (cancel)="hide()"
+></app-operation>
+<app-operation
+  operation="Ajouter"
+  type="Type"
+  *ngIf="add"
+  (cancel)="hide()"
+></app-operation>

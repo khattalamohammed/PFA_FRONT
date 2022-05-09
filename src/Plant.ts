@@ -1,0 +1,25 @@
+import { Image } from "./Image";
+
+export interface Plant {
+    nomScientifique : string, 
+    nomCommun : string, 
+    origine :  string,
+    famille : string, 
+    ordre : string, 
+    exigences : string, 
+    port : string, 
+    hauteur : string, 
+    categorie : string, 
+    feuillage : string, 
+    fleurs : string,
+    fruits : string,  
+    multiplication : string,
+    utilisations : string, 
+    soins : string, 
+    nombreSujet : string,
+    type : string,
+    springImage : Image, 
+    summerImage : Image, 
+    automne : Image, 
+    winter : Image,
+}

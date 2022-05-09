@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Categorie } from 'src/Model/Categorie';
+import { PlantsService } from '../plants.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,17 +11,32 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriesComponent implements OnInit {
   isVisible: boolean = false;
   add: boolean = false;
-  constructor() {}
+  categorieName !: string;
+  
 
-  ngOnInit(): void {}
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  
+  }
+
   show() {
     this.isVisible = true;
   }
+
   hide() {
     this.isVisible = false;
     this.add = false;
   }
+
+  
+
   new() {
     this.add = true;
+  }
+
+  nomCategorieEvent(event : string){
+    this.categorieName = event; 
   }
 }

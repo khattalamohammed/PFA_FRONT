@@ -19,9 +19,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatListModule } from '@angular/material/list'; 
+import {MatBadgeModule} from '@angular/material/badge'; 
 import { FamillesComponent } from './familles/familles.component';
 import { PlantesComponent } from './plantes/plantes.component';
 import { EditPlantComponent } from './edit-plant/edit-plant.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PlantsService } from './plants.service';
+import { TypeComponent } from './type/type.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,8 @@ import { EditPlantComponent } from './edit-plant/edit-plant.component';
     AddPlantComponent,
     FamillesComponent,
     PlantesComponent,
-    EditPlantComponent
+    EditPlantComponent,
+    TypeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,8 +55,11 @@ import { EditPlantComponent } from './edit-plant/edit-plant.component';
     MatCardModule,
     MatDividerModule,
     MatListModule,  
+    MatBadgeModule, 
+    ReactiveFormsModule, 
+    HttpClientModule, 
   ],
-  providers: [],
+  providers: [ PlantsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

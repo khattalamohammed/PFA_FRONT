@@ -10,6 +10,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { PlantesComponent } from './plantes/plantes.component'; 
 import { EditPlantComponent } from './edit-plant/edit-plant.component';
+import { TypeComponent } from './type/type.component';
 
 const routes: Routes = [
   { path: 'add', component: AddPlantComponent },
@@ -19,9 +20,10 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'edit', component: EditProfileComponent },
   { path: 'signup', component: RegisterComponent },
+  { path : 'plantes/:id', component : PlantesComponent}, 
   { path : 'plantes', component : PlantesComponent}, 
-  { path : 'edit-plant', component : EditPlantComponent}, 
-  
+  { path : 'edit-plant/:id', component : EditPlantComponent}, 
+  { path : 'types', component : TypeComponent}, 
 ];
 
 @NgModule({

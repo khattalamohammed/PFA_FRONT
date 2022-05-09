@@ -16,21 +16,25 @@
     <h1 class="text-center text-4xl mb-20 text-white text-bold">
       {{ operation }} {{ type }}
     </h1>
-    <form class="w-full">
+    <form class="w-full" [formGroup]="form">
       <div>
-        <label class="text-2xl text-white" for="name">name :</label
+        <label class="text-2xl text-white" for="nom">Nom :</label
         ><input
           class="ml-10 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-          id="name"
+          id="nom"
           type="text"
+          formControlName="nom"
+          #nom 
+          required
         />
+        <mat-error class="block text-center text-white" *ngIf="this.form.controls['nom'].hasError('required') "> Ce champ est obligatoire pour {{ operation | lowercase }} !</mat-error>
       </div>
       <div class="mt-20 float-right">
-        <button
+        <button [disabled]="!form.valid"
           class="bg-white text-[#01B388] font-bold py-2 px-4 rounded-full mr-5"
-        >
-          {{ operation }}</button
-        ><button
+        (click)="submit(form)" >
+          {{ operation }}</button>
+          <button
           (click)="hide()"
           class="bg-white text-[#01B388] font-bold py-2 px-4 rounded-full"
         >
