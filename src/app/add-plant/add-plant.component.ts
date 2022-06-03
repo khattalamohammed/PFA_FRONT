@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Categorie } from 'src/Model/Categorie';
-import { Famille } from 'src/Model/Famille';
 import { Ordre } from 'src/Model/Ordre';
 import { Type } from 'src/Model/Type';
 import { PlantsService } from '../plants.service';
@@ -15,15 +14,15 @@ import { PlantsService } from '../plants.service';
 })
 export class AddPlantComponent implements OnInit {
 
-  springFileNumber : any; 
-  summerFileNumber : any;
-  automneFileNumber : any;
-  winterFileNumber : any;
+  planteFileNumber : any; 
+  fleurFileNumber : any;
+  feuilleFileNumber : any;
+  fruitFileNumber : any;
 
-  springImage : any; 
-  summerImage : any;
-  automneImage : any;
-  winterImage : any;
+  planteImage : any; 
+  feuilleImage : any;
+  fleurImage : any;
+  fruitImage : any;
   form : FormGroup; 
 
   categorieList !: Categorie []; 
@@ -85,10 +84,10 @@ export class AddPlantComponent implements OnInit {
     formData.append('soins', form.value.soins);
     formData.append('nombreSujet', form.value.nombreSujet);
     formData.append('type', form.value.type);
-    formData.append('springFile', this.springImage);    
-    formData.append('automneFile', this.automneImage);    
-    formData.append('summerFile', this.summerImage);    
-    formData.append('winterFile', this.winterImage);    
+    formData.append('planteImage', this.planteImage);    
+    formData.append('feuilleImage', this.feuilleImage);    
+    formData.append('fleurImage', this.fleurImage);    
+    formData.append('fruitImage', this.fruitImage);    
 
 
 
@@ -107,26 +106,26 @@ export class AddPlantComponent implements OnInit {
 
 
 
-  uploadImageSpring(event: any){
-    this.springImage = event.target.files[0]; 
-    this.springFileNumber =  event.target.files.length; 
+  uploadImagePlante(event: any){
+    this.planteImage = event.target.files[0]; 
+    this.planteFileNumber =  event.target.files.length; 
   }
 
-  uploadImageSummer(event: any){
-    this.summerImage = event.target.files[0]; 
-    this.summerFileNumber =  event.target.files.length; 
+  uploadImageFleur(event: any){
+    this.fleurImage = event.target.files[0]; 
+    this.fleurFileNumber =  event.target.files.length; 
     
   }
 
-  uploadImageAutomne(event: any){
-    this.automneImage = event.target.files[0]; 
-    this.automneFileNumber =  event.target.files.length; ;
+  uploadImageFeuille(event: any){
+    this.feuilleImage = event.target.files[0]; 
+    this.feuilleFileNumber =  event.target.files.length; ;
     
   }
 
-  uploadImageWinter(event: any){
-    this.winterImage = event.target.files[0]; 
-    this.winterFileNumber =  event.target.files.length; 
+  uploadImageFruit(event: any){
+    this.fruitImage = event.target.files[0]; 
+    this.fruitFileNumber =  event.target.files.length; 
     
   }
 

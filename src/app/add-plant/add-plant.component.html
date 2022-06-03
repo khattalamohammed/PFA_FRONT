@@ -174,11 +174,11 @@
 
                 <mat-card-actions>
                     <div class="lg:flex-col lg:items-center lg:justify-around md:flex sm:flex-col md:items-center md:justify-around  md:mx-4 sm:mx-4  flex-wrap">
-                        <div class="md:flex-1 lg:flex-1 my-4 ">
+                        <div class="md:flex-1 lg:flex-1 my-4  ">
                             
-                            <input type="file" id="springFile" accept="image/*"  style="display: none;" (change)="uploadImageSpring($event)"/>
-                            <label [matBadge]="springFileNumber" matBadgeColor="warn" for="springFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:w-auto md:px-7 md:text-xl mr-5  pt-1 pb-2 pr-2 font-bold">
-                                Importer l'image de la plante en printemps
+                            <input type="file" id="planteFile" accept="image/*"  style="display: none;" (change)="uploadImagePlante($event)"/>
+                            <label [matBadge]="planteFileNumber" matBadgeColor="warn" for="planteFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:w-auto md:px-16 md:text-xl mr-5  pt-1 pb-2 pr-2 font-bold">
+                                Importer l'image de la plante
                                 <mat-icon class="mr-2"><svg class="pl-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                       <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                       <path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>
@@ -188,9 +188,9 @@
             
                         <div class="md:flex-1 lg:flex-1  my-4">
                             
-                            <input type="file" id="summerFile" accept="image/*"  style="display: none;" (change)="uploadImageSummer($event)"/>
-                            <label [matBadge]="summerFileNumber" matBadgeColor="warn" for="summerFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:px-16 md:text-xl mr-5 pt-1 pb-2 font-bold">
-                                Importer l'image de la plante en été 
+                            <input type="file" id="fleurFile" accept="image/*"  style="display: none;" (change)="uploadImageFleur($event)"/>
+                            <label [matBadge]="fleurFileNumber" matBadgeColor="warn" for="fleurFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:px-7 md:pr-8 md:text-xl mr-5 pt-1 pb-2 font-bold">
+                                Importer l'image de fleur de la plante
                                 <mat-icon><svg class="pl-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                       <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                       <path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>
@@ -200,9 +200,9 @@
             
                         <div class="md:flex-1 lg lg:flex-1 my-4">
                             
-                            <input type="file" id="automneFile" accept="image/*"  style="display: none;" (change)="uploadImageAutomne($event)"/>
-                            <label [matBadge]="automneFileNumber" matBadgeColor="warn" for="automneFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:px-8 md:text-xl mr-5 pt-1 pb-2 font-bold">
-                                Importer l'image de la plante en automne
+                            <input type="file" id="feuilleFile" accept="image/*"  style="display: none;" (change)="uploadImageFeuille($event)"/>
+                            <label [matBadge]="feuilleFileNumber" matBadgeColor="warn" for="feuilleFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:px-7 md:pr-2 md:text-xl mr-3 pt-1 pb-2 font-bold">
+                                Importer l'image de feuille de la plante
                                 <mat-icon class="mr-2"><svg class="pl-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                       <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                       <path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>
@@ -212,9 +212,9 @@
             
                         <div class="md:flex-1 lg:flex-1 my-4">
                             
-                            <input type="file" id="winterFile" accept="image/*"  style="display: none;" (change)="uploadImageWinter($event)"/>
-                            <label [matBadge]="winterFileNumber" matBadgeColor="warn" for="winterFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:px-14 md:text-xl mr-5 pt-1 pb-2 font-bold ">
-                                Importer l'image de la plante en hiver
+                            <input type="file" id="fruitFile" accept="image/*"  style="display: none;" (change)="uploadImageFruit($event)"/>
+                            <label [matBadge]="fruitFileNumber" matBadgeColor="warn" for="fruitFile" class="block bg-primaryColor rounded text-white text-center text-sm w-auto md:px-7  md:text-xl mr-5 pt-1 pb-2 font-bold ">
+                                Importer l'image de fruit de la plante
                                 <mat-icon><svg class="pl-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                       <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                       <path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>

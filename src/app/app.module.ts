@@ -13,20 +13,21 @@ import { AddPlantComponent } from './add-plant/add-plant.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatListModule } from '@angular/material/list'; 
-import {MatBadgeModule} from '@angular/material/badge'; 
+import { MatBadgeModule } from '@angular/material/badge'; 
 import { FamillesComponent } from './familles/familles.component';
 import { PlantesComponent } from './plantes/plantes.component';
 import { EditPlantComponent } from './edit-plant/edit-plant.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PlantsService } from './plants.service';
 import { TypeComponent } from './type/type.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TypeComponent } from './type/type.component';
     FamillesComponent,
     PlantesComponent,
     EditPlantComponent,
-    TypeComponent
+    TypeComponent, 
+    RegisterComponent, 
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,7 @@ import { TypeComponent } from './type/type.component';
     MatDividerModule,
     MatListModule,  
     MatBadgeModule, 
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     HttpClientModule, 
   ],
   providers: [ PlantsService],

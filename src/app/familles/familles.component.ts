@@ -19,7 +19,7 @@ export class FamillesComponent implements OnInit {
   number: any;
   form : FormGroup; 
   operation : string = ''; 
-  nomFamille : string = ''; 
+  idFamille : string = ''; 
 
   retrievedImage: any;
   base64Data: any;
@@ -92,21 +92,21 @@ export class FamillesComponent implements OnInit {
     if(this.operation === "Ajout nouvelle famille")
       this.addFamille(formData); 
     else if(this.operation === "Modification famille")
-      this.updateFamille(this.nomFamille, formData); 
+      this.updateFamille(this.idFamille, formData); 
     this.add = false; 
   }
 
-  edit(name: string ){
+  edit(id: string ){
     this.operation = "Modification famille";
     this.add  = true; 
-    this.nomFamille = name;
-    console.log(this.nomFamille);
+    this.idFamille = id;
+    console.log(this.idFamille);
   }
 
   delete(name :string) {
     this.plantService.deleteFamilleByName(name).subscribe(
       {
-        next : (res) => {console.log("suppression famille reussit : ", res); this.getAllFamilles()},
+        next : (res) => {console.log("suppression famille reussit : ", res);},
         error : (err  ) => console.log('Erreur de suppression de famille', err) 
       }
     )
@@ -130,10 +130,10 @@ export class FamillesComponent implements OnInit {
     )
   }
 
-  updateFamille(name: string , formData : FormData){
-    this.plantService.updateFamille(name, formData).subscribe(
+  updateFamille(id: string , formData : FormData){
+    this.plantService.updateFamille(id, formData).subscribe(
       {
-        next : (res) => {console.log('Modification famille reussit ', res); this.getAllFamilles(); },
+        next : (res) => {console.log('Modification famille reussit ', res); },
         error : (err) => console.log('Erreur lors de la modification famille', err)
       }
     ); 

@@ -22,6 +22,21 @@ export class PlantsService {
     return this.refresh;
   }
 
+
+  // sign up 
+
+  signUp(data: any){
+	
+  // const headers= new HttpHeaders().set('Access-Control-Allow-Origin','http://localhost:4200/'); 
+    return this.http.post(environment.serverUrl + "signup", data, { observe: 'response', responseType : 'text'}); 
+  }
+
+  // login 
+
+  logIN(data: any){
+    return this.http.post(environment.serverUrl + "login", data, { observe: 'response', responseType : 'text'}); 
+  }
+
   // plant
 
   addPlant(formData : FormData){
@@ -53,7 +68,12 @@ export class PlantsService {
   //famille 
 
   addFamille(famille : any){
-    return this.http.post(environment.serverUrl + 'famille/add', famille,  { observe: 'response', responseType : 'text' } );
+    return this.http.post(environment.serverUrl + 'famille/add', famille,  { observe: 'response', responseType : 'text' } )
+    .pipe(
+      tap(
+        () => {this.refresh.next(); }
+      )
+  ); 
   }
 
   getAllFamilles(){
@@ -64,8 +84,8 @@ export class PlantsService {
     return this.http.get<Famille>(environment.serverUrl + 'famille/' + name,  {observe : 'response' }); 
   }
 
-  updateFamille(name : string, formData : FormData){
-    return this.http.put(environment.serverUrl + 'famille/update/' + name, formData, { observe : 'response', responseType : 'text'})
+  updateFamille(id : string, formData : FormData){
+    return this.http.put(environment.serverUrl + 'famille/update/' +id, formData, { observe : 'response', responseType : 'text'})
     .pipe(
       tap(
         () => {this.refresh.next(); }
