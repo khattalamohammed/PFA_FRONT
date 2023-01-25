@@ -33,11 +33,13 @@ export class LoginComponent implements OnInit {
 
     this.planteService.logIN(data).subscribe(
       {
-        next: (res) => {console.log("respooo", res);  this.router.navigate(['/familles']); },
+        next: (res) => {console.log("respooo", res);   },
         error: (error) => console.log("errrrr",error)
       }
     )
 
+
+    this.router.navigate(['/familles']);
    
 
   }
